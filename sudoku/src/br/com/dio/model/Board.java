@@ -30,9 +30,8 @@ public class Board {
         if(getSatus() == GameStatusEnum.NON_STATUS) return false;
 
         return spaces.stream().flatMap(Collection::stream)
-                .anyMatch(s->
-                        nonNull(s.getActual()) &&
-                                !s.getActual().equals(s.getExpect()));
+                .anyMatch(s -> nonNull(s.getActual()) &&
+                        !s.getActual().equals(s.getExpect()));
     }
 
     public boolean changeValue(final int col, final  int row, final int value){
